@@ -24,7 +24,7 @@ module hdmidataencoder
 );
 
 `define AUDIO_TIMER_ADDITION	FS/1000
-`define AUDIO_TIMER_LIMIT		FREQ
+`define AUDIO_TIMER_LIMIT	FREQ/1000
 localparam [191:0] channelStatus = (FS == 48000)?192'hc202004004:(FS == 44100)?192'hc200004004:192'hc203004004;
 localparam [55:0] audioRegenPacket = {N[7:0], N[15:8], 8'h00, CTS[7:0], CTS[15:8], 16'h0000};
 reg [23:0] audioPacketHeader;
